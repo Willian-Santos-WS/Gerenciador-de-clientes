@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="js/script.js" defer></script>
+
+    <title>Orientação a Objeto</title>
+</head>
+<body>
+    <header>
+        <h1>GERENCIADOR DE CLIENTES</h1>
+    </header>
+
+    <main id="main">
+        <div id="botoes">
+
+            <button id="addService" onclick="showForm()">+<br>Adicionar </button>
+
+        </div>
+
+        
+        <form id="adicionando">
+            <label for="inputName">Nome do Cliente</label>
+
+            <input id="inputName" type="text" placeholder="Nome / carro do cliente" required autocomplete="none">
+
+            <label for="inputDesc">Descrição do Serviço</label>
+            <textarea id="inputDesc" cols="30" rows="10" required></textarea>
+        
+            <div>
+                <button onclick="cancel()">Cancelar</button>
+                <input type="submit">
+            </div>
+                
+        </form>
+
+        
+        
+    </main>
+</body>
+</html>
