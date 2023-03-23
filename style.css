@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #282c34;
+    min-height: max-content;
+    padding: 10px;
+    text-align: center;
+    font-size: calc(10px + 3vmin);
+    color: white;
+    width: 100%;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#addService {
+    font-size: calc(20px + 2.5vmin);
+    padding:  15px;
+    border-radius: 10px;
+}
+
+#formulario {
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 800px;
+    height: 80vh;
+    padding: 30px 15px 20px;
+    border-radius: 10px;
+    top: 10%;
+    background-color: #797b7f;
+}
+
+#divNome {
+    width: 90%;
+}
+
+#inputNome {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#descricao {
+    width: 90%;
+    height: 400px;
+}
+
+#inputDesc {
+    font-size: 1.3em;
+    width: 100%;
+    height: 95%;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#clients {
+    border: none;
+    width: 100vw;
+    height: max-content;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    width: 90vw;
+    max-width: 900px;
+}
+
+#cliente {
+    width: 100%;
+    height: max-content;
+    background-color: rgb(74, 74, 77);
+    margin: 10px auto;
+    border: 2px solid rgb(68, 66, 66);
+}
+
+.select {
+    height: 20px;
+    width: 20px;
+    justify-self: right;
+}
+
+#nome {
+    color: yellow;
+    text-indent: 30px;
+    font-size: 1.8em;
+    border: none;
+    width: 90%;
+}
+
+#servico {
+    color: rgb(255, 254, 254);
+    font-size: 1.5em;
+    margin: auto;
+    width: 80%;
+    height: max-content;
+    padding: 10px;
+    overflow: auto;
+    white-space: break-spaces;
+}
