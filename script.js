@@ -51,11 +51,7 @@ const remover = (element) => {
 }
 
 addEventListener('submit', (event) => {
-    event.preventDefault();
-    let novoCliente = {};
-    novoCliente = new Cliente(inputNome.value, inputDesc.value);
+    let novoCliente = new Cliente(inputNome.value, inputDesc.value);
     listaClientes.push(novoCliente);
     localStorage.setItem('listaClientes', JSON.stringify(listaClientes));
-    location.reload();
-    
 })

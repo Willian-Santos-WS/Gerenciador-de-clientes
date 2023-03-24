@@ -29,9 +29,10 @@ header {
 }
 
 #addService {
-    font-size: calc(20px + 2.5vmin);
+    font-size: calc(10px + 3vmin);
     padding:  15px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 #formulario {
@@ -106,14 +107,14 @@ header {
 #nome {
     color: yellow;
     text-indent: 30px;
-    font-size: 1.8em;
+    font-size: calc(10px + 3vmin);
     border: none;
     width: 90%;
 }
 
 #servico {
     color: rgb(255, 254, 254);
-    font-size: 1.5em;
+    font-size: calc(8px + 3vmin);
     margin: auto;
     width: 80%;
     height: max-content;
