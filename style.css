@@ -28,15 +28,16 @@ header {
     margin-top: 10px;
 }
 
-#addService {
+#menu input {
+    background-color: #d3d3d3;
     font-size: calc(10px + 3vmin);
     padding:  15px;
     border-radius: 10px;
-    cursor: pointer;
+    cursor: cell;
 }
 
 #formulario {
-    position: fixed;
+    position: absolute;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -49,6 +50,87 @@ header {
     top: 10%;
     background-color: #323232;
     color: white;
+}
+
+#calculador {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+    max-width: 800px;
+    height: 80vh;
+    border-radius: 10px;
+    top: 10%;
+    background-color: #323232;
+    color: white;
+}
+
+#fecharCalc {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10%;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+    cursor: pointer;
+}
+
+.visivel {
+    cursor: pointer;
+}
+
+#calcForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#resultado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid yellow;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px;
+    width: 90%;
+    height: 70%;
+    background-color: #676767;
+}
+
+#resultado h2 {
+    color: rgb(73, 56, 8);
+    font-size: calc(3vh + 3vmin);
+    margin: 5% auto 2%;
+}
+
+#formasPag {
+    font-size: calc(2vh + 2vmin);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 80%;
+}
+
+#cartao {
+    padding: 5px 10px;
+    border: 2px solid;
+    border-radius: 10px;
+    text-align: center;
+    background-color: red;
+    box-shadow: 0px 0px 10px red;
+}
+
+#avista {
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 2px solid;
+    text-align: center;
+    background-color: rgb(1, 98, 1);
+    box-shadow: 0px 0px 10px rgb(1, 98, 1);
 }
 
 #divNome {
@@ -102,6 +184,7 @@ header {
     justify-self: right;
     background-color: red;
     color: white;
+    cursor: pointer;
 }
 
 #nome {

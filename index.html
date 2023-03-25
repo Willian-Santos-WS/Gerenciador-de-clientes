@@ -15,9 +15,10 @@
     </header>
 
     <main id="main">
-        <div id="botoes-iniciais">
+        <div id="menu">
+            <input type="button" onclick="abreForm()" value="Adicionar Serviço">
 
-            <button type="button" id="addService" onclick="abreForm()">+<br>Adicionar Serviço</button>
+            <input type="button" onclick="abreCalc()" value="Abrir calculador">
 
         </div>
 
@@ -34,7 +35,7 @@
             </div>
 
             <div>
-                <button type="button" onclick="cancelar()">Cancelar</button>
+                <input type="button" onclick="cancelar()" value="Cancelar">
 
                 <input type="submit">
             </div>
@@ -42,6 +43,33 @@
 
         <div id="clientes">
                 
+        </div>
+
+        <div id="calculador">
+            <img src="imagens/olho.png" alt="Olho" class="visivel" id="olho" onclick="apenasResult()">
+            <input id="fecharCalc" type="button" value="X"
+            onclick="fechaCalc()">
+            <form id="calcForm">
+                <label for="valor">Valor bruto:</label>
+                <input type="number" id="valor">
+                <input type="submit" value="Enviar">
+            </form>
+
+            <div id="resultado">
+                <h2>Valor do serviço</h2>
+
+                <div id="formasPag">
+                    <div id="cartao">
+                        <h3>No cartão em até <br> <span id="parcelas"></span> sem juros</h3>
+                        <h4 id="valorCartao"></h4>
+                    </div>
+
+                    <div id="avista">
+                        <h3>À vista com <br> 5% de desconto</h3>
+                        <h4 id="valoravista"></h4>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </body>

@@ -42,6 +42,23 @@ class Cliente {
 
 const abreForm = () => document.querySelector('#formulario').style.display = 'flex';
 
+const abreCalc = () => document.querySelector('#calculador').style.display = 'flex';
+
+const fechaCalc = () => document.querySelector('#calculador').style.display = 'none';
+
+const apenasResult = () => {
+    let olho = document.querySelector('.visivel');
+    if(olho.id == 'olho') {
+        document.querySelector("#calcForm").style.display = 'none';
+        olho.src = 'imagens/olho-fechado.png';
+        olho.id = '';
+    } else {
+        document.querySelector("#calcForm").style.display = 'block';
+        olho.src = 'imagens/olho.png';
+        olho.id = 'olho';
+    }
+}
+
 const cancelar = () => location.reload();
 
 const remover = (element) => {
@@ -50,8 +67,42 @@ const remover = (element) => {
     location.reload();
 }
 
-addEventListener('submit', (event) => {
+document.getElementById('formulario').addEventListener('submit', (event) => {
     let novoCliente = new Cliente(inputNome.value, inputDesc.value);
     listaClientes.push(novoCliente);
     localStorage.setItem('listaClientes', JSON.stringify(listaClientes));
+})
+
+document.getElementById('calcForm').addEventListener('submit', (event) => {
+    event.preventDefault();
+    let valorBruto = Number(document.getElementById('valor').value);
+    let valorServico;
+    let valorServicoavista;
+
+    let parcelas = document.getElementById('parcelas');
+    let valorCartao = document.getElementById('valorCartao');
+    document.getElementById('formasPag').style.display = 'flex';
+    let valoravista = document.getElementById('valoravista');
+    
+    const botaJuro = (x) => {
+        valorServico = valorBruto + x*(valorBruto/100);
+        valorServicoavista = valorServico - 5 * (valorServico/100);
+
+        valorServico = valorServico.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
+        valorServicoavista = valorServicoavista.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
+    }
+
+    const adicionaFilho = () => {
+        valorCartao.textContent = valorServico;
+        valoravista.textContent = valorServicoavista;
+    }
+
+    if (valorBruto < 75) {
+        botaJuro(6);
+        parcelas.textContent = '1x';
+    } else if (valorBruto < 101) {
+        botaJuro(8);
+        parcelas.textContent = '2x';
+    }
+    adicionaFilho();
 })
