@@ -44,8 +44,6 @@ const abreForm = () => document.querySelector('#formulario').style.display = 'fl
 
 const abreCalc = () => document.querySelector('#calculador').style.display = 'flex';
 
-const fechaCalc = () => document.querySelector('#calculador').style.display = 'none';
-
 const apenasResult = () => {
     let olho = document.querySelector('.visivel');
     if(olho.id == 'olho') {
