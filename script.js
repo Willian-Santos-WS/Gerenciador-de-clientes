@@ -9,7 +9,9 @@ if(localStorage.getItem('listaClientes') != null) {
         let clientes = document.querySelector('#clientes');
         let item = document.createElement('div');
         let cliente = document.createElement('div');
+        let selecteEdit = document.createElement('div');
         let select = document.createElement('button');
+        let edit = document.createElement('button');
         let nome = document.createElement('div');
         let servico = document.createElement('div');
 
@@ -21,6 +23,14 @@ if(localStorage.getItem('listaClientes') != null) {
         select.setAttribute('class', 'select');
         select.setAttribute('onclick', 'remover(this)');
         select.textContent = 'x';
+        edit.setAttribute('class', 'select');
+        edit.setAttribute('id', 'edit');
+        edit.setAttribute('onclick', 'edit(this)');
+        selecteEdit.setAttribute('id', 'selecteEdit');
+        let img = document.createElement('img');
+        img.src = 'imagens/edit.png'
+        edit.appendChild(img);
+
 
         nome.textContent = element.name;
         servico.textContent = element.desc;
@@ -28,7 +38,9 @@ if(localStorage.getItem('listaClientes') != null) {
         cliente.appendChild(nome);
         cliente.appendChild(servico);
         item.appendChild(cliente);
-        item.appendChild(select);
+        selecteEdit.appendChild(select);
+        selecteEdit.appendChild(edit);
+        item.appendChild(selecteEdit);
         clientes.appendChild(item);
     });
 }
@@ -51,7 +63,7 @@ const apenasResult = () => {
         olho.src = 'imagens/olho-fechado.png';
         olho.id = '';
     } else {
-        document.querySelector("#calcForm").style.display = 'block';
+        document.querySelector("#calcForm").style.display = 'flex';
         olho.src = 'imagens/olho.png';
         olho.id = 'olho';
     }
@@ -60,9 +72,22 @@ const apenasResult = () => {
 const cancelar = () => location.reload();
 
 const remover = (element) => {
-    listaClientes.splice(element.parentNode.id, 1);
+    listaClientes.splice(element.parentNode.parentNode.id, 1);
     localStorage.setItem('listaClientes', JSON.stringify(listaClientes));
     location.reload();
+}
+
+const edit = (element) => {
+    abreForm();
+
+    inputNome.value = element.parentNode.parentNode.firstChild.firstChild.textContent;
+
+    inputDesc.value = element.parentNode.parentNode.firstChild.lastChild.textContent;
+
+    addEventListener('submit', () => {
+        console.log(element) 
+        remover(element)
+    })
 }
 
 document.getElementById('formulario').addEventListener('submit', (event) => {
