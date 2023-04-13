@@ -10,15 +10,13 @@
     <title>Gerenciador</title>
 </head>
 <body>
-    <header>
-        GERENCIADOR DE CLIENTES
-    </header>
+    <header>GERENCIADOR DE CLIENTES</header>
 
     <main id="main">
         <div id="menu">
-            <input type="button" onclick="abreForm()" value="Adicionar Serviço" style="background-color: rgb(20, 118, 183);">
+            <input type="button" onclick="openDisplay('formulario')" value="Adicionar Serviço" style="background-color: rgb(20, 118, 183);">
 
-            <input type="button" onclick="abreCalc()" value="Abrir calculador" style="background-color: rgb(17, 113, 31);">
+            <input type="button" onclick="openDisplay('calculador')" value="Abrir calculador" style="background-color: rgb(17, 113, 31);">
 
         </div>
 
@@ -35,20 +33,15 @@
             </div>
 
             <div>
-                <input type="button" onclick="cancelar()" value="Cancelar">
+                <input type="button" class="fechar" value="X">
 
                 <input type="submit">
             </div>
         </form>
 
-        <div id="clientes">
-                
-        </div>
-
         <div id="calculador">
             <img src="imagens/olho.png" alt="Olho" class="visivel" id="olho" onclick="apenasResult()">
-            <input id="fecharCalc" type="button" value="X"
-            onclick="cancelar()">
+            <input class="fechar" type="button" value="X">
             <form id="calcForm">
                 <label for="valor">Valor bruto:</label>
                 <input type="number" id="valor">
@@ -70,6 +63,16 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div id="clientes">
+            
+        </div>
+
+        <input id="abrir-entregues" type="button" value="Lista de entregues" onclick="openDisplay('entregues')">
+
+        <div id="entregues">
+            <input class="fechar" type="button" value="X">
         </div>
     </main>
 </body>

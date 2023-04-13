@@ -50,6 +50,7 @@ header {
     top: 10%;
     background-color: #323232;
     color: white;
+    z-index: 2;
 }
 
 #calculador {
@@ -65,9 +66,10 @@ header {
     top: 10%;
     background-color: #323232;
     color: white;
+    z-index: 2;
 }
 
-#fecharCalc {
+.fechar {
     position: absolute;
     top: 0;
     right: 0;
@@ -157,17 +159,18 @@ header {
     padding: 10px;
 }
 
-#clients {
+#clientes {
     border: none;
-    width: 100vw;
+    width: 100%;
     height: max-content;
 }
 
 .item {
     display: flex;
     align-items: center;
-    width: 90vw;
+    width: 90%;
     max-width: 900px;
+    margin: auto;
 }
 
 #cliente {
@@ -178,40 +181,67 @@ header {
     border: 2px solid rgb(68, 66, 66);
 }
 
-#selecteEdit {
+#selectEdit {
     display: grid;
-    gap: 8px;
+    gap: 5px;
 }
 
 .select {
-    position: relative;
-    height: 30px;
-    width: 30px;
-    justify-self: right;
     background-color: red;
     color: white;
     cursor: pointer;
+    height: 20px;
+    width: 20px;
 }
 
 #edit {
+    background-color: blue;
+}
+
+#concluir {
     background-color: green;
 }
 
 #nome {
     color: yellow;
     text-indent: 30px;
-    font-size: calc(10px + 3vmin);
+    font-size: calc(1vh + 3vmin);
     border: none;
     width: 90%;
 }
 
 #servico {
     color: rgb(255, 254, 254);
-    font-size: calc(8px + 3vmin);
+    font-size: calc(.8vh + 3vmin);
     margin: auto;
     width: 80%;
     height: max-content;
     padding: 10px;
     overflow: auto;
     white-space: break-spaces;
+}
+
+#abrir-entregues {
+    color: white;
+    font-size: calc(1vh + 3vmin);
+    border-radius: 10px;
+    padding: 10px;
+    width: 90vw;
+    max-width: 900px;
+    background-color: black;
+    cursor: pointer;
+}
+
+#entregues {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    height: max-content;
+    min-height: 350px;
+    max-height: 80vh;
+    overflow: auto;
+    background-color: #1e2126;
 }
